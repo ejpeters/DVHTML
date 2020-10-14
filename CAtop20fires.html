@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.0.2"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"datasets": {"data-44ada7d1b1e2aa10b48724f9673eef91": [{"Structures Destroyed": 280, "Cause": "Under Investigation", "county": "Colusa County, Lake County, Mendocino County & Glenn County", "month": "July", "Fire Name": "Mendocino Complex", "deaths": 1, "Acres": 459123, "Year": 2018}, {"Structures Destroyed": 1063, "Cause": "Powerlines", "county": "Ventura & Santa Barbara", "month": "December", "Fire Name": "Thomas", "deaths": 2, "Acres": 281893, "Year": 2017}, {"Structures Destroyed": 2820, "Cause": "Human Related", "county": "San Diego", "month": "October", "Fire Name": "Cedar", "deaths": 15, "Acres": 273246, "Year": 2003}, {"Structures Destroyed": 0, "Cause": "Lightning", "county": "Lassen", "month": "August", "Fire Name": "Rush", "deaths": 0, "Acres": 271911, "Year": 2012}, {"Structures Destroyed": 112, "Cause": "Human Related", "county": "Tuolumne", "month": "August", "Fire Name": "Rim", "deaths": 0, "Acres": 257314, "Year": 2013}, {"Structures Destroyed": 1, "Cause": "Human Related", "county": "Santa Barbara", "month": "July", "Fire Name": "Zaca", "deaths": 0, "Acres": 240207, "Year": 2007}, {"Structures Destroyed": 1614, "Cause": "Human Related", "county": "Shasta County,Trinity County", "month": "July", "Fire Name": "Carr", "deaths": 8, "Acres": 229651, "Year": 2018}, {"Structures Destroyed": 0, "Cause": "Undetermined", "county": "Ventura", "month": "September", "Fire Name": "Matilija", "deaths": 0, "Acres": 220000, "Year": 1932}, {"Structures Destroyed": 1650, "Cause": "Powerlines", "county": "San Diego", "month": "October", "Fire Name": "Witch", "deaths": 2, "Acres": 197990, "Year": 2007}, {"Structures Destroyed": 0, "Cause": "Lightning", "county": "Siskiyou", "month": "June", "Fire Name": "Klamath Theater Complex", "deaths": 2, "Acres": 192038, "Year": 2008}, {"Structures Destroyed": 0, "Cause": "Lightning", "county": "Monterey", "month": "July", "Fire Name": "Marble Cone", "deaths": 0, "Acres": 177866, "Year": 1977}, {"Structures Destroyed": 382, "Cause": "Powerlines", "county": "San Diego", "month": "September", "Fire Name": "Laguna", "deaths": 5, "Acres": 175425, "Year": 1970}, {"Structures Destroyed": 58, "Cause": "Lightning", "county": "Monterey", "month": "June", "Fire Name": "Basin Complex", "deaths": 0, "Acres": 162818, "Year": 2008}, {"Structures Destroyed": 11, "Cause": "Human Related", "county": "Ventura", "month": "September", "Fire Name": "Day Fire", "deaths": 0, "Acres": 162702, "Year": 2006}, {"Structures Destroyed": 209, "Cause": "Human Related", "county": "Los Angeles", "month": "August", "Fire Name": "Station", "deaths": 2, "Acres": 160557, "Year": 2009}, {"Structures Destroyed": 18804, "Cause": "Powerlines", "county": "Butte", "month": "November", "Fire Name": "Camp Fire", "deaths": 85, "Acres": 153336, "Year": 2018}, {"Structures Destroyed": 4, "Cause": "Lightning", "county": "Fresno", "month": "July", "Fire Name": "Rough", "deaths": 0, "Acres": 151623, "Year": 2015}, {"Structures Destroyed": 17, "Cause": "Human Related", "county": "Tulare", "month": "July", "Fire Name": "Mcnally", "deaths": 0, "Acres": 150696, "Year": 2002}, {"Structures Destroyed": 28, "Cause": "Lightning", "county": "Tuolumne", "month": "August", "Fire Name": "Stanislaus Complex", "deaths": 1, "Acres": 145980, "Year": 1987}, {"Structures Destroyed": 0, "Cause": "Lightning", "county": "Trinity", "month": "August", "Fire Name": "Big Bar Complex", "deaths": 0, "Acres": 140948, "Year": 1999}]}, "data": {"name": "data-44ada7d1b1e2aa10b48724f9673eef91"}, "encoding": {"color": {"type": "nominal", "scale": {"scheme": "spectral"}, "field": "Cause"}, "y": {"type": "quantitative", "field": "Acres"}, "tooltip": [{"type": "nominal", "field": "Fire Name"}, {"type": "quantitative", "field": "Acres"}, {"type": "nominal", "field": "county"}], "opacity": {"value": 0.2, "condition": {"value": 1, "selection": "selector026"}}, "x": {"type": "quantitative", "scale": {"zero": false}, "field": "Year"}}, "mark": {"type": "circle", "size": 100}, "selection": {"selector026": {"type": "multi", "fields": ["Cause"], "bind": "legend"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.0.2.json", "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
